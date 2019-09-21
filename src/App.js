@@ -51,7 +51,7 @@ export class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-10 mx-auto col-md-8 mt-5">
-            <h3 className="text-capitalize text-center">Add Todo</h3>
+            <h3 className="text-capitalize text-center">Add todo</h3>
             <TodoInput
               item={this.state.item}
               handleChange={this.handleChange}
