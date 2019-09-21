@@ -30,18 +30,29 @@ export class App extends Component {
         item: "",
         id: uuid(),
         editItem: false
-      },
-      () => console.log(this.state)
+      }
     );
   };
-  ClearList = () => {
-    console.log("Clear list");
+  clearList = () => {
+    this.setState({
+      items: []
+    });
   };
   handleDelete = id => {
-    console.log(`handle delete ${id}`);
+    const filteredItems = this.state.items.filter(item => item.id !== id);
+    this.setState({
+      items: filteredItems
+    });
   };
   handleEdit = id => {
-    console.log(`handle edit ${id}`);
+    const filteredItems = this.state.items.filter(item => item.id !== id);
+    const selectedItem = this.state.items.find(item => item.id === id);
+    this.setState({
+      items:filteredItems,
+      item:selectedItem.title,
+      id:id,
+      editItem:true
+    })
   };
 
   render() {
